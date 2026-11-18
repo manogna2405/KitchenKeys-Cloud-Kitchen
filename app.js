@@ -15,7 +15,10 @@ app.get("/", (req, res) => {
 const stationRoutes = require("./routes/stationRoutes");
 app.use("/stations", stationRoutes);
 
-// Server port
+const chefRoutes = require("./routes/chefRoutes");
+app.use("/chefs", chefRoutes);
+const bookingRoutes = require("./routes/bookingRoutes");
+app.use("/bookings", bookingRoutes);
 const PORT = 3000;
 
 // Start server

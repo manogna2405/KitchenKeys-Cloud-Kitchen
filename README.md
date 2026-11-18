@@ -1,28 +1,39 @@
-# KitchenKeys – Cloud Kitchen API
+# KitchenKeys – Cloud Kitchen Booking System
 
 ## Project Overview
 KitchenKeys is a Cloud Kitchen Management API developed using Node.js, Express.js, and SQLite.
 
-This API manages kitchen stations and provides endpoints to create, retrieve, update, delete, and search station records.
+The API manages chefs, kitchen stations, and bookings. It supports creating, retrieving, updating, deleting, and searching records.
 
 ## Technologies Used
 - Node.js
 - Express.js
 - SQLite
-- Postman
 - JavaScript
+- Postman
 
 ## Features
-- Retrieve all kitchen stations
-- Retrieve a station by ID
-- Add a new station
-- Update station details
-- Delete a station
+- Create, retrieve, update, and delete chefs
+- Create, retrieve, update, and delete kitchen stations
+- Create, retrieve, update, and delete bookings
 - Search stations by cuisine
+- Validate station cuisines (Indian, Chinese, and Italian only)
 - Retrieve booking details using SQL JOIN operations
 - Input validation and error handling
 
 ## API Endpoints
+
+### Chef APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/chefs` | Get all chefs |
+| GET | `/chefs/:id` | Get chef by ID |
+| POST | `/chefs` | Add a chef |
+| PUT | `/chefs/:id` | Update a chef |
+| DELETE | `/chefs/:id` | Delete a chef |
+
+### Station APIs
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -31,8 +42,18 @@ This API manages kitchen stations and provides endpoints to create, retrieve, up
 | POST | `/stations` | Add a station |
 | PUT | `/stations/:id` | Update a station |
 | DELETE | `/stations/:id` | Delete a station |
-| GET | `/stations/search?cuisine=Indian` | Search by cuisine |
+| GET | `/stations/search?cuisine=Indian` | Search stations by cuisine |
 | GET | `/stations/bookings/details` | Get booking details using JOIN |
+
+### Booking APIs
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/bookings` | Get all bookings |
+| GET | `/bookings/:id` | Get booking by ID |
+| POST | `/bookings` | Add a booking |
+| PUT | `/bookings/:id` | Update a booking |
+| DELETE | `/bookings/:id` | Delete a booking |
 
 ## How to Run the Project
 
@@ -51,15 +72,16 @@ This API manages kitchen stations and provides endpoints to create, retrieve, up
    `http://localhost:3000`
 
 ## Testing
-
 All API endpoints were tested using Postman.
 
-Screenshots of successful requests, validation responses, and error handling are maintained separately as project evidence.
+Tests included successful CRUD operations, station cuisine validation, cuisine search, and booking details retrieval.
+
+Screenshots of API requests and responses are maintained separately as project evidence.
 
 ## Database Tables
 - Chefs
 - Stations
 - Bookings
 
-## Status
-Station management APIs, cuisine search, and booking JOIN endpoint have been implemented and tested.
+## Project Status
+Chef, station, and booking management APIs have been implemented. Station cuisine validation, cuisine search, and booking details using SQL JOIN operations have also been implemented and tested.
